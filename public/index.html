@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2563eb"
+    >
+
+    <title>Arzoo Restaurant</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         LOGIN SCREEN
+    ====================================================== -->
+
+    <div id="loginScreen" class="login-screen">
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                <img
+                    id="loginLogo"
+                    src=""
+                    alt="Restaurant"
+                >
+            </div>
+
+            <h1 id="loginRestaurantName">
+                Arzoo Restaurant
+            </h1>
+
+            <p class="login-description">
+                Private Management Dashboard
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-field">
+
+                    <label for="passwordInput">
+                        Dashboard Password
+                    </label>
+
+                    <input
+                        id="passwordInput"
+                        type="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        maxlength="200"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    id="loginButton"
+                    type="submit"
+                    class="primary-button login-button"
+                >
+                    <span>Unlock Dashboard</span>
+                </button>
+
+            </form>
+
+            <p
+                id="loginError"
+                class="error-message"
+                aria-live="polite"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         APPLICATION
+    ====================================================== -->
+
+    <div
+        id="app"
+        class="application hidden"
+    >
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            id="sidebar"
+            class="sidebar"
+        >
+
+            <div class="brand">
+
+                <div class="brand-image">
+
+                    <img
+                        id="brandLogo"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+                <div class="brand-text">
+
+                    <strong id="brandName">
+                        Arzoo Restaurant
+                    </strong>
+
+                    <span>
+                        Management
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <button
+                    class="nav-button active"
+                    data-page="dashboard"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        <img
+                            id="navDashboardIcon"
+                            src=""
+                            alt=""
+                        >
+                    </span>
+
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <button
+                    class="nav-button"
+                    data-page="sales"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        <img
+                            id="navSalesIcon"
+                            src=""
+                            alt=""
+                        >
+                    </span>
+
+                    <span>Sales</span>
+
+                </button>
+
+
+                <button
+                    class="nav-button"
+                    data-page="expenses"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        <img
+                            id="navExpenseIcon"
+                            src=""
+                            alt=""
+                        >
+                    </span>
+
+                    <span>Purchases</span>
+
+                </button>
+
+
+                <button
+                    class="nav-button"
+                    data-page="notes"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        <img
+                            id="navNotesIcon"
+                            src=""
+                            alt=""
+                        >
+                    </span>
+
+                    <span>Notes</span>
+
+                </button>
+
+
+                <button
+                    class="nav-button"
+                    data-page="statistics"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        <img
+                            id="navStatisticsIcon"
+                            src=""
+                            alt=""
+                        >
+                    </span>
+
+                    <span>Statistics</span>
+
+                </button>
+
+
+                <button
+                    class="nav-button"
+                    data-page="settings"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        <img
+                            id="navSettingsIcon"
+                            src=""
+                            alt=""
+                        >
+                    </span>
+
+                    <span>Settings</span>
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="system-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>System Online</strong>
+                        <small>Arzoo Management</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+            <!-- =============================================
+                 HEADER
+            ============================================== -->
+
+            <header class="top-header">
+
+                <div class="header-left">
+
+                    <button
+                        id="mobileMenuButton"
+                        class="mobile-menu-button"
+                        type="button"
+                        aria-label="Open menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div>
+
+                        <p
+                            id="headerRestaurantName"
+                            class="header-small"
+                        >
+                            Arzoo Restaurant
+                        </p>
+
+                        <h1 id="pageTitle">
+                            Dashboard
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="header-date">
+                        <span>Today</span>
+                        <strong id="currentDate">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <button
+                        id="menuButton"
+                        class="three-dot-button"
+                        type="button"
+                        aria-label="More options"
+                        aria-expanded="false"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+
+                    <div
+                        id="dropdownMenu"
+                        class="dropdown-menu hidden"
+                    >
+
+                        <button
+                            type="button"
+                            data-action="notes"
+                        >
+                            <img
+                                id="menuNotesIcon"
+                                src=""
+                                alt=""
+                            >
+                            <span>Notes</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-action="statistics"
+                        >
+                            <img
+                                id="menuStatisticsIcon"
+                                src=""
+                                alt=""
+                            >
+                            <span>Statistics</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-action="settings"
+                        >
+                            <img
+                                id="menuSettingsIcon"
+                                src=""
+                                alt=""
+                            >
+                            <span>Settings</span>
+                        </button>
+
+
+                        <div class="menu-divider"></div>
+
+
+                        <button
+                            type="button"
+                            data-action="lock"
+                            class="menu-danger"
+                        >
+                            <span class="lock-icon">
+                                Lock
+                            </span>
+                            <span>Lock Dashboard</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 DASHBOARD PAGE
+            ================================================== -->
+
+            <section
+                id="page-dashboard"
+                class="page active-page"
+            >
+
+                <div class="page-introduction">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            OVERVIEW
+                        </span>
+
+                        <h2>
+                            Today's Performance
+                        </h2>
+
+                        <p>
+                            Keep track of your restaurant's
+                            income, purchases and profit.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="outline-button"
+                        data-page-target="sales"
+                        type="button"
+                    >
+                        Add Today's Sale
+                    </button>
+
+                </div>
+
+
+                <!-- STAT CARDS -->
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <img
+                                    id="statSalesIcon"
+                                    src=""
+                                    alt=""
+                                >
+                            </div>
+
+                            <span class="stat-label">
+                                TODAY
+                            </span>
+
+                        </div>
+
+                        <p>Today's Sales</p>
+
+                        <h3 id="dashboardTodaySales">
+                            PKR 0
+                        </h3>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <img
+                                    id="statExpenseIcon"
+                                    src=""
+                                    alt=""
+                                >
+                            </div>
+
+                            <span class="stat-label">
+                                TODAY
+                            </span>
+
+                        </div>
+
+                        <p>Today's Purchases</p>
+
+                        <h3 id="dashboardTodayExpenses">
+                            PKR 0
+                        </h3>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <img
+                                    id="statProfitIcon"
+                                    src=""
+                                    alt=""
+                                >
+                            </div>
+
+                            <span class="stat-label">
+                                TODAY
+                            </span>
+
+                        </div>
+
+                        <p>Today's Profit</p>
+
+                        <h3 id="dashboardTodayProfit">
+                            PKR 0
+                        </h3>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon">
+                                <img
+                                    id="statTransactionIcon"
+                                    src=""
+                                    alt=""
+                                >
+                            </div>
+
+                            <span class="stat-label">
+                                RECORDS
+                            </span>
+
+                        </div>
+
+                        <p>Transactions</p>
+
+                        <h3 id="dashboardTransactions">
+                            0
+                        </h3>
+
+                    </article>
+
+                </div>
+
+
+                <!-- DASHBOARD LOWER GRID -->
+
+                <div class="dashboard-columns">
+
+                    <!-- QUICK ACTIONS -->
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    ACTIONS
+                                </span>
+
+                                <h3>
+                                    Quick Actions
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-page-target="sales"
+                            >
+
+                                <div class="quick-icon">
+                                    <img
+                                        id="quickSalesIcon"
+                                        src=""
+                                        alt=""
+                                    >
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Add Sale
+                                    </strong>
+
+                                    <small>
+                                        Record restaurant income
+                                    </small>
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-page-target="expenses"
+                            >
+
+                                <div class="quick-icon">
+                                    <img
+                                        id="quickExpenseIcon"
+                                        src=""
+                                        alt=""
+                                    >
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Add Purchase
+                                    </strong>
+
+                                    <small>
+                                        Record something purchased
+                                    </small>
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-page-target="notes"
+                            >
+
+                                <div class="quick-icon">
+                                    <img
+                                        id="quickNotesIcon"
+                                        src=""
+                                        alt=""
+                                    >
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Add Note
+                                    </strong>
+
+                                    <small>
+                                        Save an important note
+                                    </small>
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- RECENT ACTIVITY -->
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    ACTIVITY
+                                </span>
+
+                                <h3>
+                                    Recent Activity
+                                </h3>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="text-button"
+                                data-page-target="statistics"
+                            >
+                                View All
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            id="recentActivity"
+                            class="activity-list"
+                        >
+
+                            <div class="loading-state">
+                                Loading activity...
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SALES PAGE
+            ================================================== -->
+
+            <section
+                id="page-sales"
+                class="page"
+            >
+
+                <div class="page-introduction">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            INCOME
+                        </span>
+
+                        <h2>
+                            Sales
+                        </h2>
+
+                        <p>
+                            Record the money earned by
+                            Arzoo Restaurant.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-layout">
+
+                    <article class="panel form-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    NEW RECORD
+                                </span>
+
+                                <h3>
+                                    Add Sale
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="saleForm">
+
+                            <div class="form-row">
+
+                                <div class="form-field">
+
+                                    <label for="saleAmount">
+                                        Amount
+                                    </label>
+
+                                    <div class="amount-input">
+
+                                        <span>
+                                            PKR
+                                        </span>
+
+                                        <input
+                                            id="saleAmount"
+                                            type="number"
+                                            min="0"
+                                            step="0.01"
+                                            placeholder="0"
+                                            required
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="saleDescription">
+                                    Description
+                                </label>
+
+                                <input
+                                    id="saleDescription"
+                                    type="text"
+                                    maxlength="300"
+                                    placeholder="e.g. Today's restaurant sales"
+                                >
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                            >
+                                Save Sale
+                            </button>
+
+                        </form>
+
+                    </article>
+
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    RECORDS
+                                </span>
+
+                                <h3>
+                                    Sales History
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="salesList"
+                            class="record-list"
+                        >
+
+                            <div class="loading-state">
+                                Loading sales...
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PURCHASES PAGE
+            ================================================== -->
+
+            <section
+                id="page-expenses"
+                class="page"
+            >
+
+                <div class="page-introduction">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            EXPENSES
+                        </span>
+
+                        <h2>
+                            Purchases
+                        </h2>
+
+                        <p>
+                            Track food, supplies and other
+                            restaurant purchases.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-layout">
+
+                    <article class="panel form-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    NEW RECORD
+                                </span>
+
+                                <h3>
+                                    Add Purchase
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="expenseForm">
+
+                            <div class="form-field">
+
+                                <label for="expenseAmount">
+                                    Amount
+                                </label>
+
+                                <div class="amount-input">
+
+                                    <span>
+                                        PKR
+                                    </span>
+
+                                    <input
+                                        id="expenseAmount"
+                                        type="number"
+                                        min="0"
+                                        step="0.01"
+                                        placeholder="0"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="expenseDescription">
+                                    Item / Description
+                                </label>
+
+                                <input
+                                    id="expenseDescription"
+                                    type="text"
+                                    maxlength="300"
+                                    placeholder="e.g. Chicken, oil, vegetables"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="expenseSupplier">
+                                    Supplier
+                                    <span class="optional">
+                                        Optional
+                                    </span>
+                                </label>
+
+                                <input
+                                    id="expenseSupplier"
+                                    type="text"
+                                    maxlength="200"
+                                    placeholder="Supplier name"
+                                >
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                            >
+                                Save Purchase
+                            </button>
+
+                        </form>
+
+                    </article>
+
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-kicker">
+                                    RECORDS
+                                </span>
+
+                                <h3>
+                                    Purchase History
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="expensesList"
+                            class="record-list"
+                        >
+
+                            <div class="loading-state">
+                                Loading purchases...
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NOTES PAGE
+            ================================================== -->
+
+            <section
+                id="page-notes"
+                class="page"
+            >
+
+                <div class="page-introduction">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            REMINDERS
+                        </span>
+
+                        <h2>
+                            Notes
+                        </h2>
+
+                        <p>
+                            Keep important information for
+                            the restaurant in one place.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <article class="panel form-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                NEW NOTE
+                            </span>
+
+                            <h3>
+                                Write a Note
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="noteForm">
+
+                        <div class="form-field">
+
+                            <label for="noteText">
+                                Note
+                            </label>
+
+                            <textarea
+                                id="noteText"
+                                rows="5"
+                                maxlength="5000"
+                                placeholder="Write something important..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Note
+                        </button>
+
+                    </form>
+
+                </article>
+
+
+                <div
+                    id="notesList"
+                    class="notes-grid"
+                >
+
+                    <div class="loading-state">
+                        Loading notes...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STATISTICS PAGE
+            ================================================== -->
+
+            <section
+                id="page-statistics"
+                class="page"
+            >
+
+                <div class="page-introduction">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PERFORMANCE
+                        </span>
+
+                        <h2>
+                            Statistics
+                        </h2>
+
+                        <p>
+                            Understand how the restaurant
+                            is performing over time.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="period-selector">
+
+                    <button
+                        type="button"
+                        class="period-button"
+                        data-period="day"
+                    >
+                        Today
+                    </button>
+
+                    <button
+                        type="button"
+                        class="period-button"
+                        data-period="week"
+                    >
+                        7 Days
+                    </button>
+
+                    <button
+                        type="button"
+                        class="period-button active"
+                        data-period="month"
+                    >
+                        This Month
+                    </button>
+
+                    <button
+                        type="button"
+                        class="period-button"
+                        data-period="year"
+                    >
+                        This Year
+                    </button>
+
+                    <button
+                        type="button"
+                        class="period-button"
+                        data-period="all"
+                    >
+                        All Time
+                    </button>
+
+                </div>
+
+
+                <div class="stats-grid statistics-grid">
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <img
+                                id="statisticsSalesIcon"
+                                src=""
+                                alt=""
+                            >
+                        </div>
+
+                        <p>
+                            Sales
+                        </p>
+
+                        <h3 id="statisticsSales">
+                            PKR 0
+                        </h3>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <img
+                                id="statisticsExpenseIcon"
+                                src=""
+                                alt=""
+                            >
+                        </div>
+
+                        <p>
+                            Purchases
+                        </p>
+
+                        <h3 id="statisticsExpenses">
+                            PKR 0
+                        </h3>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <img
+                                id="statisticsProfitIcon"
+                                src=""
+                                alt=""
+                            >
+                        </div>
+
+                        <p>
+                            Profit
+                        </p>
+
+                        <h3 id="statisticsProfit">
+                            PKR 0
+                        </h3>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <img
+                                id="statisticsTransactionIcon"
+                                src=""
+                                alt=""
+                            >
+                        </div>
+
+                        <p>
+                            Transactions
+                        </p>
+
+                        <h3 id="statisticsTransactions">
+                            0
+                        </h3>
+
+                    </article>
+
+                </div>
+
+
+                <article class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                DAILY BREAKDOWN
+                            </span>
+
+                            <h3>
+                                Recent Performance
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="dailyBreakdown"
+                        class="breakdown-list"
+                    >
+
+                        <div class="loading-state">
+                            Loading statistics...
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 SETTINGS PAGE
+            ================================================== -->
+
+            <section
+                id="page-settings"
+                class="page"
+            >
+
+                <div class="page-introduction">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CONFIGURATION
+                        </span>
+
+                        <h2>
+                            Settings
+                        </h2>
+
+                        <p>
+                            Manage your restaurant dashboard.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <article class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                RESTAURANT
+                            </span>
+
+                            <h3>
+                                Restaurant Information
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-list">
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <strong>
+                                    Restaurant Name
+                                </strong>
+
+                                <small>
+                                    Name shown throughout
+                                    the dashboard.
+                                </small>
+
+                            </div>
+
+                            <span
+                                id="settingsRestaurantName"
+                                class="setting-value"
+                            >
+                                Arzoo Restaurant
+                            </span>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div>
+
+                                <strong>
+                                    Currency
+                                </strong>
+
+                                <small>
+                                    Currency used for financial
+                                    records.
+                                </small>
+
+                            </div>
+
+                            <span
+                                id="settingsCurrency"
+                                class="setting-value"
+                            >
+                                PKR
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BACKUP -->
+
+                <article class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                BACKUP
+                            </span>
+
+                            <h3>
+                                Restaurant Data
+                            </h3>
+
+                            <p>
+                                Download a copy of your
+                                management records.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="exportDataButton"
+                        type="button"
+                        class="outline-button"
+                    >
+                        Export Data
+                    </button>
+
+                </article>
+
+
+                <!-- DANGER ZONE -->
+
+                <article class="panel danger-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker danger-text">
+                                DANGER ZONE
+                            </span>
+
+                            <h3>
+                                Delete All Data
+                            </h3>
+
+                            <p>
+                                This permanently removes sales,
+                                purchases and notes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="deleteAllDataButton"
+                        type="button"
+                        class="danger-button"
+                    >
+                        Delete All Restaurant Data
+                    </button>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toastContainer"
+        class="toast-container"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- =====================================================
+         CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        id="confirmModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-overlay"></div>
+
+        <div class="modal-box">
+
+            <div class="modal-icon">
+                !
+            </div>
+
+            <h3 id="confirmTitle">
+                Are you sure?
+            </h3>
+
+            <p id="confirmMessage">
+                This action cannot be undone.
+            </p>
+
+            <div class="modal-actions">
+
+                <button
+                    id="confirmCancel"
+                    type="button"
+                    class="outline-button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    id="confirmProceed"
+                    type="button"
+                    class="danger-button"
+                >
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CONFIG + APPLICATION SCRIPT
+    ====================================================== -->
+
+    <script src="/config.js"></script>
+    <script src="/script.js"></script>
+
+</body>
+</html>
